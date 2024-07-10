@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{data?.title}}</h2>
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+  <div class="p-4">
+      <label class="mb-2" for="name">Category Name</label>
+      <input matInput id="name" formControlName="name" class="form-control" type="text" />
+  </div>
+  <mat-dialog-actions>
+
+  <button mat-button type="submit" class="btn">Submit</button>
+  <button mat-button mat-dialog-close type="button" class="btn btn-secondary" (click)="onCancel()">
+    Cancel
+  </button>
+</mat-dialog-actions>
+
+</form>

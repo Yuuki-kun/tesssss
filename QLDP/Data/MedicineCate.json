@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Name": "mc1",
+    "MedicineIds": [
+      1
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "mc9",
+    "MedicineIds": []
+  },
+  {
+    "Id": 3,
+    "Name": "json c1",
+    "MedicineIds": []
+  },
+  {
+    "Id": 4,
+    "Name": "json c20",
+    "MedicineIds": []
+  },
+  {
+    "Id": 5,
+    "Name": "Cate Test Json",
+    "MedicineIds": []
+  }
+]

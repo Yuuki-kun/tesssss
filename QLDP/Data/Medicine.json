@@ -1,0 +1,48 @@
+[
+  {
+    "Id": 1,
+    "Name": "M1",
+    "Description": "M1",
+    "Price": 3.0,
+    "ImageIds": [
+      1,
+      2
+    ],
+    "Images": [],
+    "PrimaryImageId": 0,
+    "CategoryId": 1,
+    "PopularityMedicine": false
+  },
+  {
+    "Id": 2,
+    "Name": "m9",
+    "Description": "m9",
+    "Price": 20.0,
+    "ImageIds": [
+      3,
+      4
+    ],
+    "Images": [],
+    "PrimaryImageId": 4,
+    "CategoryId": 2,
+    "PopularityMedicine": false
+  },
+  {
+    "Id": 3,
+    "Name": "Medicine Test json",
+    "Description": "desc",
+    "Price": 20.0,
+    "ImageIds": [],
+    "Images": [
+      {
+        "Id": 5,
+        "Name": "Imagejson.png",
+        "URL": "./",
+        "MedicineId": 0
+      }
+    ],
+    "PrimaryImageId": 0,
+    "CategoryId": 5,
+    "PopularityMedicine": false
+  }
+]

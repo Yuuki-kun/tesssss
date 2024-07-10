@@ -1,0 +1,38 @@
+<div class="app container-fluid">
+  <div class="row" style="min-height: 100vh">
+    <div class="col-2 ps-0">
+      <div
+        class="left-menu-container d-flex flex-column align-items-start justify-content-start gap-5"
+      >
+        <div
+          class="d-flex flex-column align-items-start justify-content-start mt-2"
+        ></div>
+        <div
+          class="d-flex align-items-center justify-content-center flex-column gap-2 p-2"
+          style="width: 100%"
+        >
+          <a
+            [routerLink]="'medicine'"
+            routerLinkActive="active-menu"
+            class="menu-item d-flex align-items-center justify-content-start gap-2 w-100"
+          >
+            <i class="fa-solid fa-capsules"></i>
+            <h6 style="font-size: 1rem" class="mb-0">Medicine</h6>
+          </a>
+
+          <a
+            [routerLink]="'category'"
+            routerLinkActive="active-menu"
+            class="menu-item d-flex align-items-center justify-content-start gap-2 w-100"
+          >
+            <i class="fa-solid fa-list"></i>
+            <h6 style="font-size: 1rem" class="mb-0">Category</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-10">
+      <router-outlet />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="header">
+    <app-search
+      (textChange)="onTextChange($event)"
+      [initialValue]="initialValue"
+    ></app-search>
+  </div>
+  <div class="content">
+    <div class="search-result-area" *ngIf="isSearching">
+      <ul>
+        <li *ngFor="let item of results">
+          <ng-container *ngIf="type==='medicine'">
+            <a  (click)="onLinkClick(item.id)">
+
+              <img
+                [src]="item.images[0].url"
+                alt=""
+                class="img-fluid"
+                style="width: 70px"
+              />
+              {{ item.name }}
+            </a>
+          </ng-container>
+            <ng-container *ngIf="type==='category'">
+              <a  (click)="onLinkClick(item.id)">
+                {{ item.name }}
+              </a>
+            </ng-container>
+
+        </li>
+      </ul>
+      <ng-container *ngIf="results?.length === 0"> No results </ng-container>
+    </div>
+  </div>
+</div>

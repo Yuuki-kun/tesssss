@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Name": "img1",
+    "URL": "./",
+    "MedicineId": 1
+  },
+  {
+    "Id": 2,
+    "Name": "img2.png",
+    "URL": "./",
+    "MedicineId": 1
+  },
+  {
+    "Id": 3,
+    "Name": "m9.png",
+    "URL": "m9.png",
+    "MedicineId": 2
+  },
+  {
+    "Id": 4,
+    "Name": "m10.png",
+    "URL": "m10.png",
+    "MedicineId": 2
+  },
+  {
+    "Id": 5,
+    "Name": "Imagejson.png",
+    "URL": "./",
+    "MedicineId": 3
+  }
+]

@@ -1,0 +1,290 @@
+@import './app.constant.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--text-primary);
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p{
+    margin-bottom: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+button {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: .9rem;
+    line-height: 1.5;
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(16, 17, 26, 0.16) 0px 1px 1px 0px, rgb(216, 222, 228) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+button:hover {
+    opacity: .9;
+    box-shadow: rgba(16, 17, 26, 0.16) 0px 1px 1px 0px, rgb(153, 165, 184) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+button:active{
+    opacity: .8;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+
+th {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+input,
+textarea,
+select {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-default);
+    background-color: #fff;
+    border: 1px solid var(--input-border-color);
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.medicine-main-img {
+    width: 40px;
+    border-radius: 7px;
+    box-shadow: rgba(16, 17, 26, 0.16) 0px 1px 1px 0px, rgb(216, 222, 228) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+}
+
+.container {
+    padding: 0 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: .8rem !important;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table td {
+    color: rgb(89, 97, 113) !important;
+}
+
+.table th {
+    border-bottom: 1px solid #ccc;
+    color: rgb(53, 58, 68) !important;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover>td {
+    background-color: rgb(239, 242, 248) !important;
+}
+.table tbody tr:hover button{
+    box-shadow: rgba(16, 17, 26, 0.16) 0px 1px 1px 0px, rgb(153, 165, 184) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+}
+
+.table .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.table img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.limited-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+    text-align: justify;
+    white-space: pre-wrap;
+}
+
+.table-container {
+    max-height: 100vh;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    vertical-align: middle;
+}
+
+
+.pagination {
+    float: right;
+    margin-bottom: 1rem;
+}
+
+.popular-medicine-content {
+    background: #ddd;
+    padding: 5px 7px;
+    border-radius: 5px;
+}
+
+.popular-medicine {
+    color: green;
+    background: lightgreen;
+}
+
+form label {
+    text-transform: uppercase;
+    color: grey;
+}
+
+form input,
+textarea {
+    font-weight: 500;
+}
+
+form input::placeholder,
+area::placeholder {
+    color: #c0bdbd;
+    font-weight: 300;
+}
+
+form input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+
+form.submitted input.ng-invalid {
+    border: 1px solid red;
+}
+
+.action-btn{
+    box-shadow: none;
+}
+
+.add-btn {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 10px;
+    background: rgb(58, 43, 226);
+    border: .5px solid transparent;
+}
+
+.add-btn:hover {
+    border: .5px solid #acacac;
+}

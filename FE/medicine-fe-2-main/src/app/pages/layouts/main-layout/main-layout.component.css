@@ -1,0 +1,25 @@
+.left-menu-container {
+    height: 100%;
+    background-color: rgb(234, 238, 243);
+    padding-top: 10px;
+
+}
+
+.menu-item {
+    border-radius: 5px;
+    padding: 7px 12px;
+    height: 40px;
+    text-decoration: unset;
+    color: rgb(53, 56, 58);
+}
+
+.menu-item:hover {
+    background-color: rgba(123, 133, 195, 0.2);
+    cursor: pointer;
+}
+
+.menu-item.active-menu {
+    color: rgb(58, 43, 226);
+    background-color: var(--link-hover-background);
+    font-weight: 700 !important;
+}

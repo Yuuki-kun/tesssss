@@ -1,0 +1,116 @@
+<app-search-result [type]="'medicine'"></app-search-result>
+<app-spinner [isLoading]="isLoading"></app-spinner>
+
+<div class="container mt-4">
+  <!-- <app-header [searchValue]="searchValue" (doSearch)="onSearchMedicine($event)"/> -->
+  <div class="d-flex align-items-center justify-content-between">
+      <h2>Medicines</h2>
+      <a class="add-btn" [routerLink]="['add']"> + Add Medicine</a>
+    
+  </div>
+
+  <div class="d-flex  align-items-center justify-content-between gap-2">
+      <select
+      [(ngModel)]="selectedCategoryId"
+      (change)="onCategoryChange($event)"
+      class="form-select"
+      style="width: auto; max-width: 40%"
+    >
+      <option value="-1">Select category</option>
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
+      </option>
+      </select>
+
+    <div class="d-flex gap-2">
+      <button (click)="changeCurrency()">Price in {{priceInUSD  ? "USD" : "VND"}}</button>
+      <button (click)="exportCSV()" class="d-flex align-items-center justify-content-between gap-2">
+        <i class="fa-solid fa-file-export"></i>
+        <span>Export</span>  
+      </button>  </div>
+    
+  </div>
+
+  <p *ngIf="!medicines.length" style="color: red">{{ errorMessage }}</p>
+
+  <div class="table-container" *ngIf="!errorMessage || medicines.length > 0">
+    <table class="table table-hover align-top">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Medicine</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Action</th>
+          <!-- <th>Images</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let medicine of medicines"
+          (click)="onSeeDetailsMedicine(medicine.id)"
+        >
+          <td>{{ medicine.id }}</td>
+          <td>
+            <div class="d-flex align-items-center gap-4">
+              <img
+                *ngIf="medicine.images"
+                [src]="medicine.images[0].url"
+                alt="{{ medicine.images[0].url }}"
+                class="medicine-main-img"
+              />
+              <p class="text-captions">{{ medicine.name | titlecase }}</p>
+            </div>
+          </td>
+          <td style="max-width: 500px; text-align: justify">
+            <p class="limited-lines">{{ medicine.description }}</p>
+          </td>
+          <td>{{ priceInUSD ? ( medicine.price | currency) : (medicine.price| currencyConversion) }}</td>
+          <td>
+            <div
+              class="d-flex align-items-center justify-content-start gap-2"
+              style="font-size: 1.2rem"
+            >
+              <button
+                (click)="onDeleteMedicine($event, medicine)"
+                class="border-0 rounded-3 action-btn"
+                style="background-color: transparent"
+              >
+                <i class="fa-solid fa-trash text-danger"></i>
+              </button>
+              <a
+                (click)="onSelectEdit($event, medicine)"
+                class=""
+                style="cursor: pointer"
+              >
+                <i class="fa-regular fa-pen-to-square text-primary"></i>
+              </a>
+            </div>
+          </td>
+          <!-- <td>
+              <div *ngFor="let image of medicine.images">
+                <img [src]="image.url" alt="Medicine Image" style="max-width: 100px; max-height: 100px;"/>
+              </div>
+            </td> -->
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <select (change)="onSizeChange($event)" class="form-select me-2">
+        <ng-template ngFor [ngForOf]="[10, 20, 30, 50]" let-op>
+          <option [ngValue]="op">{{ op }}</option>
+        </ng-template>
+      </select>
+      <button
+        class="btn btn-sm"
+        [disabled]="currentPage === 0"
+        (click)="onPageChange(currentPage - 1)"
+      >
+        Previous
+      </button>
+      <button class="btn btn-sm" (click)="onPageChange(currentPage + 1)">
+        Next
+      </button>
+    </div>
+  </div>
+</div>

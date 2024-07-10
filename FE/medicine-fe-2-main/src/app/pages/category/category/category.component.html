@@ -1,0 +1,94 @@
+<div class="container">
+  <app-search-result [type]="'category'"></app-search-result>
+  <app-spinner [isLoading]="isLoading"></app-spinner>
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center justify-content-between">
+        <h2>Categories</h2>
+        <div class="d-flex gap-2">
+          <button (click)="exportCSV()" class="d-flex align-items-center justify-content-between gap-2">
+            <i class="fa-solid fa-file-export"></i>
+            <span>Export</span>  
+          </button> 
+          <button class="add-btn" (click)="onAddCategory()">+ Add Category</button>
+        </div>
+      </div>
+    </div>
+    <h3 *ngIf="!categories.length">No Categories</h3>
+    <div
+      class="d-flex align-items-top justify-content-start gap-4"
+      *ngIf="categories.length"
+    >
+      <div
+        class="table-container categories-container"
+        [class.on-see-details]="isSeeDetails"
+      >
+        <table class="table table-striped table-hover align-middle">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>No. Medicines</th>
+              <th>Action</th>
+              <!-- <th>Images</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let category of categories"
+              (click)="onSeeDetailsCategory(category)"
+            >
+              <td>{{ category.id }}</td>
+              <td>
+                <p>{{ category.name }}</p>
+              </td>
+              <td>{{ category.medicines && category.medicines.length | na  }}</td>
+              <td>
+                <div
+                  class="d-flex align-items-center justify-content-start gap-2"
+                  style="font-size: 1.2rem"
+                >
+                  <button
+                    (click)="onDelete($event, category)"
+                    class="border-0 rounded-3 action-btn"
+                    style="background-color: transparent"
+                  >
+                    <i class="fa-solid fa-trash text-danger"></i>
+                  </button>
+                  <a
+                    (click)="onSelectEdit($event, category)"
+                    class=""
+                    style="cursor: pointer"
+                  >
+                    <i class="fa-regular fa-pen-to-square text-primary"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="isSeeDetails" class="w-50" style="margin-top: 1.2rem">
+        <div>
+          <div class="d-flex justify-content-between align-items-center">
+              <h4 class="fw-bold">{{ selectedCategory.name }}</h4>
+              <button (click)="onCloseSeeDetailsCategory()" style="">X</button>
+          </div>
+          <div
+            class="d-flex flex-column align-items-start justify-content-center"
+          >
+            <a
+              *ngFor="let medicine of selectedCategory.medicines"
+              class="btn btn-link"
+              [routerLink]="['/medicine/details', medicine.id]"
+            >
+              <p class="text-captions">
+                {{ medicine.name }}
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

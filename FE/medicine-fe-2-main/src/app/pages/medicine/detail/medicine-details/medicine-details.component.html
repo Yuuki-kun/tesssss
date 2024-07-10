@@ -1,0 +1,65 @@
+<!-- <app-search-result [type]="'medicine'"></app-search-result> -->
+
+<div *ngIf="medicine" class="mt-5">
+  <button (click)="back()" >
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <div class="d-flex align-items-start justify-content-start mb-4 gap-4">
+    <img
+      [src]="medicine.images[0].url"
+      alt="medicine.images[0].name"
+      class="img-fluid medicine-details-img medicine-main-img"
+    />
+    <div>
+      <h2>{{ medicine.name }}</h2>
+      <p class="fw-bold">{{ medicine.price | currency }}</p>
+      <p class="mt-2">
+        <strong
+          class="popular-medicine-content"
+          [class.popular-medicine]="medicine.popularityMedicine"
+        >
+          {{ medicine.popularityMedicine ? "Popular" : "Not popular" }}</strong
+        >
+      </p>
+    </div>
+    <button
+      class="btn text-primary fs-4 pt-0"
+      (click)="onSelectEdit(medicine)"
+    >
+      <i class="fa fa-pen-to-square"></i>
+    </button>
+  </div>
+
+  <div class="d-flex align-items-start flex-column gap-2 mb-2">
+    <p><strong>Id:</strong> {{ medicine.id }}</p>
+    <p style="white-space: pre-wrap">
+      <strong>Description:</strong><br />{{
+        medicine.description || "No description yet"
+      }}
+    </p>
+    <a>
+      <strong>Category:</strong>
+      <a
+        [routerLink]="['/category', medicine.medicineCategory.id]"
+        class="cate-content"
+        style="display: inline"
+      >
+        {{
+          medicine.medicineCategory
+            ? medicine.medicineCategory.name
+            : "Uncategorized"
+        }}</a
+      >
+    </a>
+  </div>
+
+  <div class="d-flex align-item-center gap-3 mt-4">
+    <div *ngFor="let image of medicine.images">
+      <img
+        [src]="image.url"
+        alt="Product Image"
+        class="img-fluid medicine-details-img medicine-main-img"
+      />
+    </div>
+  </div>
+</div>

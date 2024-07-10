@@ -1,0 +1,186 @@
+<div class="container mt-4">
+  <!-- <app-loading *ngIf="isLoading"></app-loading> -->
+   <app-spinner [isLoading]="isLoading"></app-spinner>
+  <div class="row">
+   <div class="col-12 d-flex align-items-center justify-content-between">
+      <h3 class="fw-bold" style="">{{isEditing ? "Edit Product" : "Add Product"}}</h3>
+      <button *ngIf="isEditing" class="view-prod-btn" (click)="goToViewProd()">View Product</button>
+    </div>
+  </div>
+  <form
+    [formGroup]="medicineForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    [class.submitted]="submitted"
+  >
+    <div *ngIf="isEditing" class="form-group mb-3">
+      <label for="id">Id</label>
+      <input
+        id="id"
+        formControlName="id"
+        class="form-control"
+        type="number"
+        [readonly]="isEditing"
+        />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Medicine Name</label>
+      <input
+        id="name"
+        formControlName="name"
+        class="form-control"
+        type="text"
+        placeholder="Medicine name"
+        required
+        minlength="3"
+        maxlength="255"
+      />
+
+      <div
+        *ngIf="getField('name')?.invalid && (getField('name')?.dirty || getField('name')?.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="getField('name')?.errors?.['required']">Name is required.</div>
+        <div *ngIf="getField('name')?.errors?.['minlength']">
+          Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="getField('name')?.errors?.['maxlength']">
+          Name cannot be more than 255 characters long.
+        </div>
+      </div>
+    </div>
+    <!-- <pre class="text-danger"
+        *ngIf="(medicineForm.controls['name'].touched || submitted) && medicineForm.controls['name'].errors">
+      Name is required
+      </pre> -->
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        placeholder="Product description"
+        id="description"
+        formControlName="description"
+        class="form-control"
+        type="text"
+      ></textarea>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-4">
+        <label for="price">Price</label>
+        <input
+          id="price"
+          formControlName="price"
+          class="form-control"
+          type="number"
+          placeholder="Pricing in $"
+        />
+        <div
+          *ngIf="
+            getField('price')?.invalid && (getField('price')?.dirty || getField('price')?.touched)
+          "
+          class="text-danger"
+        >
+          <div *ngIf="getField('price')?.errors?.['required']">Price is required.</div>
+          <div
+            *ngIf="getField('price')?.errors?.['min'] || getField('price')?.errors?.['max']"
+          >
+            Invalid price
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-8 d-flex gap-3 align-items-center">
+        <div>
+          <label for="categoryId">Category</label>
+          <select
+            formControlName="categoryId"
+            id="categoryId"
+            class="form-select mb-3"
+          >
+            <option [value]="0">Select category</option>
+            <option *ngFor="let category of categories" [value]="category.id">
+              {{ category.name }}
+            </option>
+          </select>
+          <div
+          *ngIf="
+            getField('categoryId')?.invalid && (getField('categoryId')?.dirty || getField('categoryId')?.touched)
+          "
+          class="text-warning"
+        >
+          <div
+            *ngIf="getField('categoryId')?.errors?.['min'] || getField('categoryId')?.errors?.['max']"
+          >
+            Not belong to any Category
+          </div>
+        </div>
+        </div>
+        <button
+          type="button"
+          class="rounded-2 h-50 add-btn"
+          (click)="onAddCategory()"
+        >
+          + Add New Category
+        </button>
+      </div>
+    </div>
+
+    <div class="form-check d-flex align-items-center py-0">
+      <input
+        id="popularityMedicine"
+        formControlName="popularityMedicine"
+        class="form-check-input mt-0 me-2"
+        type="checkbox"
+      />
+      <label class="form-check-label" for="popularityMedicine"
+        >Popular Medicine</label
+      >
+    </div>
+
+    <div class="form-group mt-2">
+      <label for="images">Images</label>
+      <input
+        id="images"
+        class="form-control"
+        type="file"
+        (change)="onFileSelected($event)"
+        multiple
+      />
+    </div>
+
+    <div *ngIf="isEditing" class="d-flex align-item-center gap-3 mt-4">
+      <div *ngFor="let image of medicineToSave.images" class="image-container">
+        <img
+          [src]="image.url"
+          alt="Product Image"
+          class="img-fluid medicine-details-img medicine-main-img"
+        />
+        <button
+          type="button"
+          class="delete-img-btn"
+          (click)="onDeleteImage(image.id)"
+        >
+        <i class="fa-solid fa-minus"></i>
+
+        </button>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-start gap-2">
+      <button type="submit" class= "add-btn mt-4">Submit</button>
+      <button
+      *ngIf="!isEditing"
+        (click)="onResetFormData()"
+        type="reset"
+        class=" mt-4"
+      >
+        Reset
+      </button>
+      <button (click)="goBack()" type="button" class=" mt-4">
+        Cancel
+      </button>
+    </div>
+
+  </form>
+</div>

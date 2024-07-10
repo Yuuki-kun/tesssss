@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34607.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC8Training.QLSV", "DC8Training.QLSV\DC8Training.QLSV.csproj", "{60195475-E64E-4DB8-9320-BA86F3433ECE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8148428-6ADE-41B6-A0A6-4B48FEDDAFED}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DC8Training.Database", "DC8Training.Database\DC8Training.Database.sqlproj", "{DB481D4B-C170-4B4A-B88A-86C7904292B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC8Training.WebAPI", "DC8Training.WebAPI\DC8Training.WebAPI.csproj", "{3EC5E311-FE9F-4AAD-A9B7-839623598405}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC8Training.Common", "DC8Training.Common\DC8Training.Common.csproj", "{F34F82E5-9E11-4DD9-BEF4-8DC813E2C431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLDP", "QLDP\QLDP.csproj", "{C8F35DA5-C519-4A05-B6ED-63B8386B58CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60195475-E64E-4DB8-9320-BA86F3433ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60195475-E64E-4DB8-9320-BA86F3433ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60195475-E64E-4DB8-9320-BA86F3433ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60195475-E64E-4DB8-9320-BA86F3433ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB481D4B-C170-4B4A-B88A-86C7904292B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB481D4B-C170-4B4A-B88A-86C7904292B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB481D4B-C170-4B4A-B88A-86C7904292B2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DB481D4B-C170-4B4A-B88A-86C7904292B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB481D4B-C170-4B4A-B88A-86C7904292B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB481D4B-C170-4B4A-B88A-86C7904292B2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3EC5E311-FE9F-4AAD-A9B7-839623598405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC5E311-FE9F-4AAD-A9B7-839623598405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC5E311-FE9F-4AAD-A9B7-839623598405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC5E311-FE9F-4AAD-A9B7-839623598405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34F82E5-9E11-4DD9-BEF4-8DC813E2C431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34F82E5-9E11-4DD9-BEF4-8DC813E2C431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34F82E5-9E11-4DD9-BEF4-8DC813E2C431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34F82E5-9E11-4DD9-BEF4-8DC813E2C431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F35DA5-C519-4A05-B6ED-63B8386B58CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F35DA5-C519-4A05-B6ED-63B8386B58CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F35DA5-C519-4A05-B6ED-63B8386B58CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F35DA5-C519-4A05-B6ED-63B8386B58CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D77B12A-1454-4D41-9F1B-F902B509AF10}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+.categories-container {
+    width: 100%;
+    transition: all .3s ease;
+}
+
+.on-see-details {
+    width: 50%;
+}

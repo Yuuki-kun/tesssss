@@ -1,0 +1,25 @@
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.image-container {
+    position: relative;
+}
+
+.delete-img-btn {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    width: 25px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background: red;
+}
+
+.view-prod-btn{
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 4px 7px;
+}
